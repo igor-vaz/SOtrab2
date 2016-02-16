@@ -6,7 +6,7 @@
   Simulacao de Gerenciador de Memoria - Algoritmo LRU 
   
   Trabalho 2 - Sistemas Operacionais
-  Grupo: Alexandre Miloski, Igor Vaz, Victor Peres
+  Grupo: Alexandre Miloski, Igor Vaz, Victor Peres, Matheus Martins
   Data: 18/02/16
   
 */
@@ -20,10 +20,9 @@ int ml = 64;
 void printFrames(int frames[], int ws){
      int i = 0;
      for (i = 0; i < ws; i++){
-         printf("%d", frames[i]);    
-         printf("\n");
+         printf("%d ", frames[i]);    
      }
-     printf("\n\n");
+     printf("\n");
 }
 
 void reorganizaFrames(int frames[], int val, int pos, int ws){
@@ -90,7 +89,7 @@ void lru(int ws){
      }
      
      // Varrendo a lista
-     for (j = 0; j < sizeof(sequence)/sizeof(sequence[0]); j++){
+     for (j = 0; j < ws/*sizeof(sequence)/sizeof(sequence[0])*/; j++){
          
          // Preenche os ws primeiros frames
          if(frames[ws-1] == 0){
@@ -138,6 +137,6 @@ int main(int argc, char *argv[]){
     
   lru(ml);             
   
-  system("PAUSE");	
+  //system("PAUSE");	
   return 0;
 }
