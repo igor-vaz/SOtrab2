@@ -135,7 +135,14 @@ int criaPagina(){
 }
 
 int posicaoLivre(){
-
+	int i;
+	for (i = 0; i < N; i++)
+	{
+		if (frames[i]==-1)
+		{
+			return i;
+		}
+	}
 }
 
 void *fazRequisicao(void *args){
@@ -143,11 +150,10 @@ void *fazRequisicao(void *args){
 	int ws = 4;
 	printf("thread %d criada\n", arg->id);
 	//gera o numero de pagina
-	int i;
-	for ( i = 0; i < 4; i++)
+	int i,j,k;
+	for ( i = 0; i < ws; i++)
 	{
 		int n = criaPagina();
-		int j;
 		for (j = 0; j < i; j++) {
 			while (n == arg->frame[j])
 				n = criaPagina();
@@ -158,7 +164,12 @@ void *fazRequisicao(void *args){
 	sem_wait(&mutex);
 	//insere os frames da thread na memoria
 	i = posicaoLivre();
-	
+	for (k = i; k < i + ws; k++)
+	{
+		frames[k] = arg->frame[k-i];
+	}
+	printFrames(frames,N);
+
 	sem_post(&mutex);
 }
 
@@ -186,6 +197,9 @@ int main(int argc, char const *argv[]){
 	
 	pthread_t tid[nThreads];
 
+	int i;
+
+	for (i = 0; i < N; i++) frames[i]= -1;
 
 	for(t=0; t<nThreads; t++){
 		esperaPor(3);
