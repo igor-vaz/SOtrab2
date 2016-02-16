@@ -164,13 +164,16 @@ void *fazRequisicao(void *args){
 	sem_wait(&mutex);
 	//insere os frames da thread na memoria
 	i = posicaoLivre();
+	arg->posMem = i;
 	for (k = i; k < i + ws; k++)
 	{
 		frames[k] = arg->frame[k-i];
+
 	}
 	printFrames(frames,N);
 
 	sem_post(&mutex);
+
 }
 
 
