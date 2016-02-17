@@ -7,6 +7,7 @@ typedef struct{
 	int id; //id da thread
 	int frame[4];
 	int posMem;
+  FILE *output;
 }t_Args;
 
 typedef struct {
