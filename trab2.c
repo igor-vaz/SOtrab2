@@ -20,7 +20,7 @@ int frames[N];
 int threadAtiva[MAX];
 Fila filaDeThreads;
 int cont;
-sem_t mutex;
+sem_t mutex, mutexPrint;
 
 void printFrames(int frames[], int ws){
     int i = 0;
@@ -37,8 +37,10 @@ void reorganizaFrames(int frame[], int val, int pos, int ws){
 
     // Pagina existe na memoria
     if (pos != ws){
+        sem_wait(&mutexPrint);
         printf("Sem PF\n");
         printf("-----------\n");
+		sem_post(&mutexPrint);
         // Verifica se existe algum frame vazio
         for(i = 0; i < ws; i++){
     	    if(frame[i] == 0){
@@ -61,14 +63,18 @@ void reorganizaFrames(int frame[], int val, int pos, int ws){
     }
     // Pagina nao existe na memoria e memoria cheia
     else{
+    	sem_wait(&mutexPrint);
         printf("PF\n");
         printf("-----------\n");
+		sem_post(&mutexPrint);
         for(i = 0; i < ws; i++){
     	    frame[i] = frame[i+1];
         }
         frame[ws-1] = val;
     }
+    sem_wait(&mutexPrint);
     printFrames(frame, ws);
+	sem_post(&mutexPrint);
     alocado = 0;
     posAloc = 0;
 }
@@ -119,7 +125,9 @@ int posicaoLivre(){
 void *fazRequisicao(void *args){
 	t_Args *arg = (t_Args*)args;
 	int ws = 4;
+	sem_wait(&mutexPrint);
 	printf("thread %d criada\n", arg->id);
+	sem_post(&mutexPrint);
 	//gera o numero de pagina
 	int i,j,k;
 	for ( i = 0; i < ws; i++)
@@ -130,7 +138,9 @@ void *fazRequisicao(void *args){
 				n = criaPagina();
 		}
 		arg->frame[i] = n;
-		printf("pagina %d criada\n", arg->frame[i]);
+		sem_wait(&mutexPrint);
+		printf("pagina %d criada na thread %d\n", arg->frame[i], arg->id);
+		sem_post(&mutexPrint);
 	}
 	sem_wait(&mutex);
 	//insere os frames da thread na memoria
@@ -138,7 +148,9 @@ void *fazRequisicao(void *args){
 	if (i == -1) {
 		t_Args proc;
 	    proc = remover(&filaDeThreads);
-	    printf("SWAP-OUT: processo %d\n", proc.id);
+	    sem_wait(&mutexPrint);
+		printf("SWAP-OUT: processo %d\n", proc.id);
+		sem_post(&mutexPrint);
 	    arg->posMem = proc.posMem;
 	    threadAtiva[proc.id] = 0;
 		i = arg->posMem;
@@ -150,16 +162,22 @@ void *fazRequisicao(void *args){
 	{
 	    frames[k] = arg->frame[k-i];
 	}
+	sem_wait(&mutexPrint);
 	printf("thread arg: %p\n", arg);
+	sem_post(&mutexPrint);
 	inserir(&filaDeThreads, *arg);
+	sem_wait(&mutexPrint);
 	printFrames(frames,N);
+	sem_post(&mutexPrint);
 
 	sem_post(&mutex);
 
 	while (threadAtiva[arg->id]) {
 		esperaPor(3);
 		int n = criaPagina();
-		printf("pagina %d solicitada\n", n);
+		sem_wait(&mutexPrint);
+		printf("pagina %d solicitada pela thread %d\n", n, arg->id);
+		sem_post(&mutexPrint);
 		sem_wait(&mutex);
 
 		lru(arg->frame, n, ws);
@@ -168,11 +186,15 @@ void *fazRequisicao(void *args){
 		{
 			frames[k] = arg->frame[k-i];
 		}
+		sem_wait(&mutexPrint);
 		printFrames(frames,N);
+		sem_post(&mutexPrint);
 
 		sem_post(&mutex);
 	}
+	sem_wait(&mutexPrint);
 	printf("O processo %d terminou\n", arg->id);
+	sem_post(&mutexPrint);
 }
 
 
@@ -188,6 +210,7 @@ int main(int argc, char const *argv[]){
   	cont = 0;
 	criarFila(&filaDeThreads, MAX);
   	sem_init(&mutex, 0, 1);
+  	sem_init(&mutexPrint, 0, 1);
 
 	srand(time(NULL));
 
@@ -208,7 +231,9 @@ int main(int argc, char const *argv[]){
 
 	for(t=0; t<nThreads; t++){
 		esperaPor(3);
+		sem_wait(&mutexPrint);
 		printf("criando thread no segundo %d \n", (t+1)*3);
+		sem_post(&mutexPrint);
     	args = (t_Args*)malloc(sizeof(t_Args));
 		args->id = t;
 		//cria threads
