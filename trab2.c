@@ -1,7 +1,7 @@
 #include <stdio.h>
-#include <stdlib.h> 
+#include <stdlib.h>
 #include <pthread.h>
-#include <time.h> 
+#include <time.h>
 #include <semaphore.h>
 
 #define N 64
@@ -21,38 +21,38 @@ sem_t mutex;
 void printFrames(int frames[], int ws){
     int i = 0;
     for (i = 0; i < ws; i++){
-        printf("%d ", frames[i]);    
+        printf("%d ", frames[i]);
     }
     printf("\n");
 }
 
-void reorganizaFrames(int frames[], int val, int pos, int ws){
+void reorganizaFrames(int frame[], int val, int pos, int ws){
     int i = 0;
     int posAloc = 0;
     int alocado = 0;
-     
+
     // Pagina existe na memoria
     if (pos != ws){
         printf("Sem PF\n");
         printf("-----------\n");
         // Verifica se existe algum frame vazio
         for(i = 0; i < ws; i++){
-    	    if(frames[i] == 0){
+    	    if(frame[i] == 0){
                 posAloc = i-1;
                 for(i = pos; i < ws-1; i++){
-                    frames[i] = frames[i+1];
-                } 
-                frames[posAloc] = val;
+                    frame[i] = frame[i+1];
+                }
+                frame[posAloc] = val;
                 alocado = 1;
                 break;
-            }      
-        }  
+            }
+        }
         // Nenhum frame vazio - Aloca no ultimo
         if(alocado == 0){
             for(i = pos; i < ws-1; i++){
-                frames[i] = frames[i+1];
-            }  
-            frames[ws-1] = val;
+                frame[i] = frame[i+1];
+            }
+            frame[ws-1] = val;
         }
     }
     // Pagina nao existe na memoria e memoria cheia
@@ -60,16 +60,16 @@ void reorganizaFrames(int frames[], int val, int pos, int ws){
         printf("PF\n");
         printf("-----------\n");
         for(i = 0; i < ws; i++){
-    	    frames[i] = frames[i+1];
+    	    frame[i] = frame[i+1];
         }
-        frames[ws-1] = val;
-    }     
-    printFrames(frames, ws);  
+        frame[ws-1] = val;
+    }
+    printFrames(frame, ws);
     alocado = 0;
     posAloc = 0;
 }
 
-void lru(int ws){
+void lru(int* frame, int valor, int ws) {
 	/*int in = args->id % N;
     sequence[in] = args->id;*/
 //    int sequence[N] = {1,2,3,4,5,6,4,5,1,2,3,4,5,6,9,10,2,3,4,5,6,7,2,11,1,2,4,7,9,10,11,21,10,2,1,1,4,3,4,5,1,2,3,4,5,6,9,10,2,3,4,5,6,7,2,11,1,2,4,7,9,10,11,21};
@@ -77,51 +77,21 @@ void lru(int ws){
     int i = 0;
     int j = 0;
 
-    // Inicia frames com 0
-    for (i = 0; i < ws; i++){
-        frames[i] = 0;
-    }
-     
-    // Varrendo a lista
-    //for (j = 0; j < sizeof(sequence)/sizeof(sequence[0]); j++){ 
-        // Preenche os ws primeiros frames
-        if(frames[ws-1] == 0){
-                // Varre os frames da memoria
-                for(i = 0; i <= ws; i++){
-                    // Contem pagina - atualiza frames
-                    if(frames[i] == sequence[j]){
-                    	reorganizaFrames(frames, sequence[j], i, ws);   
-                        break;  
-                    }  
-                    // Nao contem pagina - atualiza frames
-                    else{
-                        if(frames[i] == 0){
-                            frames[i] = sequence[j];
-                            printf("PF\n");
-                            printf("-----------\n");
-                            printFrames(frames, ws);
-                            break;
-                        }
-                    }
-                }
-        }else{
-            // varre os frames da memoria
-            for(i = 0; i <= ws; i++){
-                // Contem pagina - atualiza frames
-                if(i < ws && frames[i] == sequence[j]){
-                    reorganizaFrames(frames, sequence[j], i, ws);  
-                    break; 
-                } 
-                // Nao contem pagina - atualiza frames
-                else{
-                    if(i == ws){
-                        reorganizaFrames(frames, sequence[j], i, ws);
-                        break;
-                    }    
-                } 
-            } 
-        }   
-    //}
+	// varre os frames da memoria
+	for(i = 0; i <= ws; i++){
+	    // Contem pagina - atualiza frames
+	    if(i < ws && frame[i] == valor){
+	        reorganizaFrames(frame, valor, i, ws);
+	        break;
+	    }
+	    // Nao contem pagina - atualiza frames
+	    else{
+	        if(i == ws){
+	            reorganizaFrames(frame, valor, i, ws);
+	            break;
+	        }
+    	}
+	}
 }
 
 void esperaPor (unsigned int segs) {
@@ -168,18 +138,29 @@ void *fazRequisicao(void *args){
 	for (k = i; k < i + ws; k++)
 	{
 		frames[k] = arg->frame[k-i];
-
 	}
 	printFrames(frames,N);
 
 	sem_post(&mutex);
 
+	while (1) {
+		esperaPor(3);
+		int n = criaPagina();
+		printf("pagina %d solicitada\n", n);
+		lru(arg->frame, n, ws);
+		i = arg->posMem;
+		for (k = i; k < i + ws; k++)
+		{
+			frames[k] = arg->frame[k-i];
+		}
+		printFrames(frames,N);
+	}
 }
 
 
 int main(int argc, char const *argv[]){
-	
-	// Working set Limit    
+
+	// Working set Limit
 	int ws = 4;
 	// Memory Limit
 	int ml = 64;
@@ -190,14 +171,14 @@ int main(int argc, char const *argv[]){
   	sem_init(&mutex, 0, 1);
 
 	srand(time(NULL));
-	
+
 	if (argc < 3){
 		printf("rodar com %s <#threads> <#paginas>\n", argv[0]);
 		exit(0);
 	}
 
 	nThreads = atoi(argv[1]), nPaginas = atoi(argv[2]);
-	
+
 	pthread_t tid[nThreads];
 
 	int i;
@@ -217,10 +198,10 @@ int main(int argc, char const *argv[]){
 	//espera todas as threads terminarem
 	for (t=0; t<nThreads; t++){
     	if (pthread_join(tid[t], NULL)){
-        	printf("--ERRO: pthread_join() \n"); exit(-1); 
-    	} 
-  	} 
+        	printf("--ERRO: pthread_join() \n"); exit(-1);
+    	}
+  	}
 
   	pthread_exit(NULL);
-	return 0;		
+	return 0;
 }
