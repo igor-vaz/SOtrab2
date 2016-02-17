@@ -3,18 +3,22 @@
 #include <pthread.h>
 #include <time.h>
 #include <semaphore.h>
-
+#include "fila.h"
 #define N 64
-//estrutura de uma thread
+#define MAX 50
 
-typedef struct{
-	int id; //id da thread
-	int frame[4];
-	int posMem;
-}t_Args;
+// //estrutura de uma thread
+//
+// typedef struct{
+// 	int id; //id da thread
+// 	int frame[4];
+// 	int posMem;
+// }t_Args;
 
 int sequence[N];
 int frames[N];
+int threadAtiva[MAX];
+Fila filaDeThreads;
 int cont;
 sem_t mutex;
 
@@ -70,10 +74,6 @@ void reorganizaFrames(int frame[], int val, int pos, int ws){
 }
 
 void lru(int* frame, int valor, int ws) {
-	/*int in = args->id % N;
-    sequence[in] = args->id;*/
-//    int sequence[N] = {1,2,3,4,5,6,4,5,1,2,3,4,5,6,9,10,2,3,4,5,6,7,2,11,1,2,4,7,9,10,11,21,10,2,1,1,4,3,4,5,1,2,3,4,5,6,9,10,2,3,4,5,6,7,2,11,1,2,4,7,9,10,11,21};
-    //int frames[ws];
     int i = 0;
     int j = 0;
 
@@ -113,6 +113,7 @@ int posicaoLivre(){
 			return i;
 		}
 	}
+	return -1;
 }
 
 void *fazRequisicao(void *args){
@@ -134,19 +135,33 @@ void *fazRequisicao(void *args){
 	sem_wait(&mutex);
 	//insere os frames da thread na memoria
 	i = posicaoLivre();
-	arg->posMem = i;
+	if (i == -1) {
+		t_Args proc;
+	    proc = remover(&filaDeThreads);
+	    printf("SWAP-OUT: processo %d\n", proc.id);
+	    arg->posMem = proc.posMem;
+	    threadAtiva[proc.id] = 0;
+		i = arg->posMem;
+	}
+	else {
+	    arg->posMem = i;
+	}
 	for (k = i; k < i + ws; k++)
 	{
-		frames[k] = arg->frame[k-i];
+	    frames[k] = arg->frame[k-i];
 	}
+	printf("thread arg: %p\n", arg);
+	inserir(&filaDeThreads, *arg);
 	printFrames(frames,N);
 
 	sem_post(&mutex);
 
-	while (1) {
-		esperaPor(3);
+	while (threadAtiva[arg->id]) {
+		esperaPor(1);
 		int n = criaPagina();
 		printf("pagina %d solicitada\n", n);
+		sem_wait(&mutex);
+
 		lru(arg->frame, n, ws);
 		i = arg->posMem;
 		for (k = i; k < i + ws; k++)
@@ -154,7 +169,10 @@ void *fazRequisicao(void *args){
 			frames[k] = arg->frame[k-i];
 		}
 		printFrames(frames,N);
+
+		sem_post(&mutex);
 	}
+	printf("O processo %d terminou\n", arg->id);
 }
 
 
@@ -168,6 +186,7 @@ int main(int argc, char const *argv[]){
 	unsigned int secs;
   	t_Args *args;
   	cont = 0;
+	criarFila(&filaDeThreads, MAX);
   	sem_init(&mutex, 0, 1);
 
 	srand(time(NULL));
@@ -185,8 +204,10 @@ int main(int argc, char const *argv[]){
 
 	for (i = 0; i < N; i++) frames[i]= -1;
 
+	for (i = 0; i < MAX; i++) threadAtiva[i]= 1;
+
 	for(t=0; t<nThreads; t++){
-		esperaPor(3);
+		esperaPor(1);
 		printf("criando thread no segundo %d \n", (t+1)*3);
     	args = (t_Args*)malloc(sizeof(t_Args));
 		args->id = t;
