@@ -157,7 +157,7 @@ void *fazRequisicao(void *args){
 	sem_post(&mutex);
 
 	while (threadAtiva[arg->id]) {
-		esperaPor(1);
+		esperaPor(3);
 		int n = criaPagina();
 		printf("pagina %d solicitada\n", n);
 		sem_wait(&mutex);
@@ -207,7 +207,7 @@ int main(int argc, char const *argv[]){
 	for (i = 0; i < MAX; i++) threadAtiva[i]= 1;
 
 	for(t=0; t<nThreads; t++){
-		esperaPor(1);
+		esperaPor(3);
 		printf("criando thread no segundo %d \n", (t+1)*3);
     	args = (t_Args*)malloc(sizeof(t_Args));
 		args->id = t;
