@@ -1,0 +1,394 @@
+criando thread no segundo 3 
+thread 0 criada
+paginas criadas pela thread 0: 45 41 12 29 
+thread 0 inserindo na memoria
+alocacao da memoria real: 45 41 12 29 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+pagina 47 solicitada pela thread 0
+PF
+-----------
+frames adicionados pela thread 0: 41 12 29 47 
+
+alocacao da memoria real: 41 12 29 47 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+criando thread no segundo 6 
+thread 1 criada
+paginas criadas pela thread 1: 10 7 12 49 
+thread 1 inserindo na memoria
+alocacao da memoria real: 41 12 29 47 10 7 12 49 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+pagina 10 solicitada pela thread 1
+pagina 2 solicitada pela thread 0
+Sem PF
+-----------
+frames adicionados pela thread 1: 7 12 49 10 
+
+alocacao da memoria real: 41 12 29 47 7 12 49 10 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+criando thread no segundo 9 
+PF
+-----------
+frames adicionados pela thread 0: 12 29 47 2 
+
+alocacao da memoria real: 12 29 47 2 7 12 49 10 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+thread 2 criada
+paginas criadas pela thread 2: 21 13 46 34 
+thread 2 inserindo na memoria
+alocacao da memoria real: 12 29 47 2 7 12 49 10 21 13 46 34 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+pagina 20 solicitada pela thread 1
+pagina 45 solicitada pela thread 0
+PF
+-----------
+frames adicionados pela thread 1: 12 49 10 20 
+
+alocacao da memoria real: 12 29 47 2 12 49 10 20 21 13 46 34 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+criando thread no segundo 12 
+pagina 5 solicitada pela thread 2
+PF
+-----------
+frames adicionados pela thread 2: 13 46 34 5 
+
+alocacao da memoria real: 12 29 47 2 12 49 10 20 13 46 34 5 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+PF
+-----------
+frames adicionados pela thread 0: 29 47 2 45 
+
+alocacao da memoria real: 29 47 2 45 12 49 10 20 13 46 34 5 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+thread 3 criada
+paginas criadas pela thread 3: 45 3 5 43 
+thread 3 inserindo na memoria
+alocacao da memoria real: 29 47 2 45 12 49 10 20 13 46 34 5 45 3 5 43 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+pagina 37 solicitada pela thread 0
+pagina 43 solicitada pela thread 1
+pagina 17 solicitada pela thread 2
+PF
+-----------
+frames adicionados pela thread 0: 47 2 45 37 
+
+pagina 7 solicitada pela thread 3
+alocacao da memoria real: 47 2 45 37 12 49 10 20 13 46 34 5 45 3 5 43 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+PF
+-----------
+frames adicionados pela thread 2: 46 34 5 17 
+
+alocacao da memoria real: 47 2 45 37 12 49 10 20 46 34 5 17 45 3 5 43 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+PF
+-----------
+frames adicionados pela thread 3: 3 5 43 7 
+
+alocacao da memoria real: 47 2 45 37 12 49 10 20 46 34 5 17 3 5 43 7 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+criando thread no segundo 15 
+PF
+-----------
+frames adicionados pela thread 1: 49 10 20 43 
+
+alocacao da memoria real: 47 2 45 37 49 10 20 43 46 34 5 17 3 5 43 7 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+thread 4 criada
+paginas criadas pela thread 4: 12 44 34 15 
+thread 4 inserindo na memoria
+alocacao da memoria real: 47 2 45 37 49 10 20 43 46 34 5 17 3 5 43 7 12 44 34 15 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+pagina 24 solicitada pela thread 4
+pagina 6 solicitada pela thread 0
+PF
+-----------
+frames adicionados pela thread 4: 44 34 15 24 
+
+alocacao da memoria real: 47 2 45 37 49 10 20 43 46 34 5 17 3 5 43 7 44 34 15 24 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+criando thread no segundo 18 
+PF
+-----------
+frames adicionados pela thread 0: 2 45 37 6 
+
+alocacao da memoria real: 2 45 37 6 49 10 20 43 46 34 5 17 3 5 43 7 44 34 15 24 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+pagina 29 solicitada pela thread 3
+PF
+-----------
+frames adicionados pela thread 3: 5 43 7 29 
+
+alocacao da memoria real: 2 45 37 6 49 10 20 43 46 34 5 17 5 43 7 29 44 34 15 24 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+pagina 36 solicitada pela thread 1
+PF
+-----------
+frames adicionados pela thread 1: 10 20 43 36 
+
+alocacao da memoria real: 2 45 37 6 10 20 43 36 46 34 5 17 5 43 7 29 44 34 15 24 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+pagina 8 solicitada pela thread 2
+PF
+-----------
+frames adicionados pela thread 2: 34 5 17 8 
+
+alocacao da memoria real: 2 45 37 6 10 20 43 36 34 5 17 8 5 43 7 29 44 34 15 24 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+thread 5 criada
+paginas criadas pela thread 5: 6 48 17 18 
+thread 5 inserindo na memoria
+alocacao da memoria real: 2 45 37 6 10 20 43 36 34 5 17 8 5 43 7 29 44 34 15 24 6 48 17 18 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+pagina 0 solicitada pela thread 5
+criando thread no segundo 21 
+PF
+-----------
+pagina 28 solicitada pela thread 2
+frames adicionados pela thread 5: 48 17 18 0 
+
+alocacao da memoria real: 2 45 37 6 10 20 43 36 34 5 17 8 5 43 7 29 44 34 15 24 48 17 18 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+PF
+-----------
+frames adicionados pela thread 2: 5 17 8 28 
+
+alocacao da memoria real: 2 45 37 6 10 20 43 36 5 17 8 28 5 43 7 29 44 34 15 24 48 17 18 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+pagina 43 solicitada pela thread 0
+PF
+-----------
+frames adicionados pela thread 0: 45 37 6 43 
+
+alocacao da memoria real: 45 37 6 43 10 20 43 36 5 17 8 28 5 43 7 29 44 34 15 24 48 17 18 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+pagina 20 solicitada pela thread 3
+PF
+-----------
+frames adicionados pela thread 3: 43 7 29 20 
+
+alocacao da memoria real: 45 37 6 43 10 20 43 36 5 17 8 28 43 7 29 20 44 34 15 24 48 17 18 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+pagina 21 solicitada pela thread 4
+PF
+-----------
+frames adicionados pela thread 4: 34 15 24 21 
+
+pagina 18 solicitada pela thread 1
+alocacao da memoria real: 45 37 6 43 10 20 43 36 5 17 8 28 43 7 29 20 34 15 24 21 48 17 18 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+thread 6 criada
+paginas criadas pela thread 6: 5 13 12 9 
+thread 6 inserindo na memoria
+alocacao da memoria real: 45 37 6 43 10 20 43 36 5 17 8 28 43 7 29 20 34 15 24 21 48 17 18 0 5 13 12 9 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+PF
+-----------
+frames adicionados pela thread 1: 20 43 36 18 
+
+alocacao da memoria real: 45 37 6 43 20 43 36 18 5 17 8 28 43 7 29 20 34 15 24 21 48 17 18 0 5 13 12 9 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+pagina 16 solicitada pela thread 5
+pagina 47 solicitada pela thread 3
+PF
+-----------
+frames adicionados pela thread 5: 17 18 0 16 
+
+alocacao da memoria real: 45 37 6 43 20 43 36 18 5 17 8 28 43 7 29 20 34 15 24 21 17 18 0 16 5 13 12 9 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+pagina 27 solicitada pela thread 6
+PF
+-----------
+frames adicionados pela thread 6: 13 12 9 27 
+
+alocacao da memoria real: 45 37 6 43 20 43 36 18 5 17 8 28 43 7 29 20 34 15 24 21 17 18 0 16 13 12 9 27 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+PF
+-----------
+pagina 4 solicitada pela thread 4
+frames adicionados pela thread 3: 7 29 20 47 
+
+alocacao da memoria real: 45 37 6 43 20 43 36 18 5 17 8 28 7 29 20 47 34 15 24 21 17 18 0 16 13 12 9 27 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+PF
+-----------
+frames adicionados pela thread 4: 15 24 21 4 
+
+alocacao da memoria real: 45 37 6 43 20 43 36 18 5 17 8 28 7 29 20 47 15 24 21 4 17 18 0 16 13 12 9 27 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+pagina 17 solicitada pela thread 0
+PF
+-----------
+frames adicionados pela thread 0: 37 6 43 17 
+
+alocacao da memoria real: 37 6 43 17 20 43 36 18 5 17 8 28 7 29 20 47 15 24 21 4 17 18 0 16 13 12 9 27 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+pagina 2 solicitada pela thread 2
+PF
+-----------
+frames adicionados pela thread 2: 17 8 28 2 
+
+alocacao da memoria real: 37 6 43 17 20 43 36 18 17 8 28 2 7 29 20 47 15 24 21 4 17 18 0 16 13 12 9 27 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+criando thread no segundo 24 
+pagina 23 solicitada pela thread 1
+PF
+-----------
+frames adicionados pela thread 1: 43 36 18 23 
+
+alocacao da memoria real: 37 6 43 17 43 36 18 23 17 8 28 2 7 29 20 47 15 24 21 4 17 18 0 16 13 12 9 27 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+thread 7 criada
+paginas criadas pela thread 7: 39 43 7 6 
+thread 7 inserindo na memoria
+alocacao da memoria real: 37 6 43 17 43 36 18 23 17 8 28 2 7 29 20 47 15 24 21 4 17 18 0 16 13 12 9 27 39 43 7 6 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+pagina 20 solicitada pela thread 4
+pagina 14 solicitada pela thread 6
+pagina 47 solicitada pela thread 0
+pagina 36 solicitada pela thread 5
+pagina 8 solicitada pela thread 3
+pagina 7 solicitada pela thread 7
+PF
+-----------
+pagina 14 solicitada pela thread 1
+frames adicionados pela thread 4: 24 21 4 20 
+
+alocacao da memoria real: 37 6 43 17 43 36 18 23 17 8 28 2 7 29 20 47 24 21 4 20 17 18 0 16 13 12 9 27 39 43 7 6 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+criando thread no segundo 27 
+PF
+-----------
+frames adicionados pela thread 6: 12 9 27 14 
+
+alocacao da memoria real: 37 6 43 17 43 36 18 23 17 8 28 2 7 29 20 47 24 21 4 20 17 18 0 16 12 9 27 14 39 43 7 6 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+PF
+-----------
+frames adicionados pela thread 0: 6 43 17 47 
+
+alocacao da memoria real: 6 43 17 47 43 36 18 23 17 8 28 2 7 29 20 47 24 21 4 20 17 18 0 16 12 9 27 14 39 43 7 6 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+pagina 20 solicitada pela thread 2
+PF
+-----------
+frames adicionados pela thread 2: 8 28 2 20 
+
+alocacao da memoria real: 6 43 17 47 43 36 18 23 8 28 2 20 7 29 20 47 24 21 4 20 17 18 0 16 12 9 27 14 39 43 7 6 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+PF
+-----------
+frames adicionados pela thread 3: 29 20 47 8 
+
+alocacao da memoria real: 6 43 17 47 43 36 18 23 8 28 2 20 29 20 47 8 24 21 4 20 17 18 0 16 12 9 27 14 39 43 7 6 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+Sem PF
+-----------
+frames adicionados pela thread 7: 39 43 6 7 
+
+alocacao da memoria real: 6 43 17 47 43 36 18 23 8 28 2 20 29 20 47 8 24 21 4 20 17 18 0 16 12 9 27 14 39 43 6 7 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+PF
+-----------
+frames adicionados pela thread 5: 18 0 16 36 
+
+alocacao da memoria real: 6 43 17 47 43 36 18 23 8 28 2 20 29 20 47 8 24 21 4 20 18 0 16 36 12 9 27 14 39 43 6 7 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+PF
+-----------
+frames adicionados pela thread 1: 36 18 23 14 
+
+alocacao da memoria real: 6 43 17 47 36 18 23 14 8 28 2 20 29 20 47 8 24 21 4 20 18 0 16 36 12 9 27 14 39 43 6 7 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+thread 8 criada
+paginas criadas pela thread 8: 38 7 42 10 
+thread 8 inserindo na memoria
+alocacao da memoria real: 6 43 17 47 36 18 23 14 8 28 2 20 29 20 47 8 24 21 4 20 18 0 16 36 12 9 27 14 39 43 6 7 38 7 42 10 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+pagina 28 solicitada pela thread 6
+pagina 29 solicitada pela thread 2
+pagina 35 solicitada pela thread 0
+pagina 47 solicitada pela thread 1
+PF
+-----------
+pagina 11 solicitada pela thread 3
+pagina 49 solicitada pela thread 4
+frames adicionados pela thread 6: 9 27 14 28 
+
+alocacao da memoria real: 6 43 17 47 36 18 23 14 8 28 2 20 29 20 47 8 24 21 4 20 18 0 16 36 9 27 14 28 39 43 6 7 38 7 42 10 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+PF
+-----------
+frames adicionados pela thread 2: 28 2 20 29 
+
+alocacao da memoria real: 6 43 17 47 36 18 23 14 28 2 20 29 29 20 47 8 24 21 4 20 18 0 16 36 9 27 14 28 39 43 6 7 38 7 42 10 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+criando thread no segundo 30 
+PF
+-----------
+frames adicionados pela thread 0: 43 17 47 35 
+
+alocacao da memoria real: 43 17 47 35 36 18 23 14 28 2 20 29 29 20 47 8 24 21 4 20 18 0 16 36 9 27 14 28 39 43 6 7 38 7 42 10 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+pagina 36 solicitada pela thread 7
+PF
+-----------
+frames adicionados pela thread 7: 43 6 7 36 
+
+alocacao da memoria real: 43 17 47 35 36 18 23 14 28 2 20 29 29 20 47 8 24 21 4 20 18 0 16 36 9 27 14 28 43 6 7 36 38 7 42 10 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+PF
+-----------
+frames adicionados pela thread 3: 20 47 8 11 
+
+alocacao da memoria real: 43 17 47 35 36 18 23 14 28 2 20 29 20 47 8 11 24 21 4 20 18 0 16 36 9 27 14 28 43 6 7 36 38 7 42 10 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+PF
+-----------
+frames adicionados pela thread 4: 21 4 20 49 
+
+alocacao da memoria real: 43 17 47 35 36 18 23 14 28 2 20 29 20 47 8 11 21 4 20 49 18 0 16 36 9 27 14 28 43 6 7 36 38 7 42 10 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+PF
+-----------
+frames adicionados pela thread 1: 18 23 14 47 
+
+alocacao da memoria real: 43 17 47 35 18 23 14 47 28 2 20 29 20 47 8 11 21 4 20 49 18 0 16 36 9 27 14 28 43 6 7 36 38 7 42 10 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+pagina 10 solicitada pela thread 5
+PF
+-----------
+frames adicionados pela thread 5: 0 16 36 10 
+
+alocacao da memoria real: 43 17 47 35 18 23 14 47 28 2 20 29 20 47 8 11 21 4 20 49 0 16 36 10 9 27 14 28 43 6 7 36 38 7 42 10 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+pagina 44 solicitada pela thread 8
+PF
+-----------
+frames adicionados pela thread 8: 7 42 10 44 
+
+alocacao da memoria real: 43 17 47 35 18 23 14 47 28 2 20 29 20 47 8 11 21 4 20 49 0 16 36 10 9 27 14 28 43 6 7 36 7 42 10 44 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+thread 9 criada
+paginas criadas pela thread 9: 17 14 44 13 
+thread 9 inserindo na memoria
+alocacao da memoria real: 43 17 47 35 18 23 14 47 28 2 20 29 20 47 8 11 21 4 20 49 0 16 36 10 9 27 14 28 43 6 7 36 7 42 10 44 17 14 44 13 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+
+pagina 40 solicitada pela thread 6
+pagina 48 solicitada pela thread 9
+pagina 41 solicitada pela thread 3
+pagina 35 solicitada pela thread 4
+pagina 29 solicitada pela thread 8
+pagina 9 solicitada pela thread 2
+criando thread no segundo 33 
+pagina 36 solicitada pela thread 1
+pagina 5 solicitada pela thread 5
+PF
+-----------
+frames adicionados pela thread 6: 27 14 28 40 
+
+alocacao da memoria real: 43 17 47 35 18 23 14 47 28 2 20 29 20 47 8 11 21 4 20 49 0 16 36 10 27 14 28 40 43 6 7 36 7 42 10 44 17 14 44 13 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+PF
+-----------
+frames adicionados pela thread 9: 14 44 13 48 
+
+alocacao da memoria real: 43 17 47 35 18 23 14 47 28 2 20 29 20 47 8 11 21 4 20 49 0 16 36 10 27 14 28 40 43 6 7 36 7 42 10 44 14 44 13 48 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+pagina 39 solicitada pela thread 0
+PF
+-----------
+frames adicionados pela thread 0: 17 47 35 39 
+
+alocacao da memoria real: 17 47 35 39 18 23 14 47 28 2 20 29 20 47 8 11 21 4 20 49 0 16 36 10 27 14 28 40 43 6 7 36 7 42 10 44 14 44 13 48 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+PF
+-----------
+frames adicionados pela thread 4: 4 20 49 35 
+
+alocacao da memoria real: 17 47 35 39 18 23 14 47 28 2 20 29 20 47 8 11 4 20 49 35 0 16 36 10 27 14 28 40 43 6 7 36 7 42 10 44 14 44 13 48 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+PF
+-----------
+frames adicionados pela thread 3: 47 8 11 41 
+
+alocacao da memoria real: 17 47 35 39 18 23 14 47 28 2 20 29 47 8 11 41 4 20 49 35 0 16 36 10 27 14 28 40 43 6 7 36 7 42 10 44 14 44 13 48 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+pagina 33 solicitada pela thread 7
+PF
+-----------
+frames adicionados pela thread 7: 6 7 36 33 
+
+alocacao da memoria real: 17 47 35 39 18 23 14 47 28 2 20 29 47 8 11 41 4 20 49 35 0 16 36 10 27 14 28 40 6 7 36 33 7 42 10 44 14 44 13 48 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+PF
+-----------
+frames adicionados pela thread 2: 2 20 29 9 
+
+alocacao da memoria real: 17 47 35 39 18 23 14 47 2 20 29 9 47 8 11 41 4 20 49 35 0 16 36 10 27 14 28 40 6 7 36 33 7 42 10 44 14 44 13 48 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+PF
+-----------
+frames adicionados pela thread 5: 16 36 10 5 
+
+alocacao da memoria real: 17 47 35 39 18 23 14 47 2 20 29 9 47 8 11 41 4 20 49 35 16 36 10 5 27 14 28 40 6 7 36 33 7 42 10 44 14 44 13 48 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+PF
+-----------
+frames adicionados pela thread 8: 42 10 44 29 
+
+alocacao da memoria real: 17 47 35 39 18 23 14 47 2 20 29 9 47 8 11 41 4 20 49 35 16 36 10 5 27 14 28 40 6 7 36 33 42 10 44 29 14 44 13 48 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+PF
+-----------
+frames adicionados pela thread 1: 23 14 47 36 
+
+alocacao da memoria real: 17 47 35 39 23 14 47 36 2 20 29 9 47 8 11 41 4 20 49 35 16 36 10 5 27 14 28 40 6 7 36 33 42 10 44 29 14 44 13 48 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+thread 10 criada
+paginas criadas pela thread 10: 28 46 48 16 
+thread 10 inserindo na memori
