@@ -206,7 +206,7 @@ void *fazRequisicao(void *args){
 
 
 int main(int argc, char const *argv[]){
-	FILE *output = fopen("output-thread.txt","w+");
+	
 	// Working set Limit
 	int ws = 4;
 	// Memory Limit
@@ -240,7 +240,7 @@ int main(int argc, char const *argv[]){
 		esperaPor(3);
     	args = (t_Args*)malloc(sizeof(t_Args));
 		args->id = t;
-		args->output = output;
+	
 		sem_wait(&mutexPrint);
 		printf("criando thread no segundo %d \n", (t+1)*3);
 		
@@ -256,7 +256,7 @@ int main(int argc, char const *argv[]){
         	printf("--ERRO: pthread_join() \n"); exit(-1);
     	}
   	}
-  	fclose(output);
+  	
   	pthread_exit(NULL);
 	return 0;
 }
